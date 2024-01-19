@@ -10,8 +10,10 @@ document.addEventListener("click", (event) => {
 
     if (button === "decrease") {
         counterValue--;
+        valueClass.style.transform = "scale(0.8)";
     } else if (button === "increase"){
         counterValue++;
+        valueClass.style.transform = "scale(1.2)";
     } else if (button === "reset") {
         counterValue = 0;
     };
@@ -20,15 +22,13 @@ document.addEventListener("click", (event) => {
 
     valueClass.innerHTML = counterValue;
 
-    valueClass.style.transform = "scale(1.2)";
-
     setTimeout(() => {
         valueClass.style.transform = "scale(1)";
     }, 300);
 
     if (eeClass === event.target){
         alert("You found me!🎉 I'm an easter egg! 🥚");
-    }
+    };
 });
 
 document.addEventListener("keydown", (event) => {
@@ -37,8 +37,10 @@ document.addEventListener("keydown", (event) => {
 
     if (keyPressed === "-") {
         counterValue--;
+        valueClass.style.transform = "scale(0.8)";
     } else if (keyPressed === "+"){
         counterValue++;
+        valueClass.style.transform = "scale(1.2)";
     } else if (keyPressed === "0") {
         counterValue = 0;
     };
@@ -47,11 +49,13 @@ document.addEventListener("keydown", (event) => {
 
     valueClass.innerHTML = counterValue;
 
-    valueClass.style.transform = "scale(1.2)";
-
     setTimeout(() => {
         valueClass.style.transform = "scale(1)";
     }, 300);
+
+    if ("*" === event.key){
+        alert("You found me!🎉 I'm an easter egg! 🥚");
+    };
 
 });
 
